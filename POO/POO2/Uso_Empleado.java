@@ -4,14 +4,34 @@ import java.util.*;
 
 public class Uso_Empleado {
     public static void main(String[] args) {
-    
+
+        Empleado[] empleados=new Empleado[3];
+
+        empleados[0]=new Empleado("Juan", 85000, 2014, 11, 10);
+
+        empleados[1]=new Empleado("Ana", 100000, 2010, 7, 29);
+
+        empleados[2]=new Empleado("José Maria", 80000, 2016, 5, 15);
+
+
+        for(int i=0; i<empleados.length; i++){
+
+            empleados[i].Aumentosueldo(5);
+        }
+
+        for(int i=0; i<empleados.length; i++){
+
+            System.out.println("\nNombre: " + empleados[i].getnombre() + " Sueldo: " + empleados[i].getsueldo() + " Alta del contrato: " + empleados[i].getAltaContrato());
+
+        }
+
     }
 
 }
 
-class empleado{
+class Empleado{
 
-    public empleado(String name, double salary, int year, int mounth, int day){
+    public Empleado(String name, double salary, int year, int mounth, int day){
 
         nombre=name;
 
@@ -43,7 +63,7 @@ class empleado{
 
     public void Aumentosueldo(double porcentaje){ //setter
 
-        double aumento=sueldo+(porcentaje/100);
+        double aumento=sueldo*(porcentaje/100);
 
         sueldo+=aumento;
 
